@@ -1,12 +1,21 @@
 # Automatically generated daily program
-# Date: 2026-11-24 02:23:48
+# Date: 2026-11-24 23:57:48
 
-def fibonacci(n):
-    sequence = [0, 1]
-    while len(sequence) < n:
-        sequence.append(sequence[-1] + sequence[-2])
-    return sequence
+import random
+
+def simulate_guessing_game():
+    target = random.randint(1, 100)
+    print(f"Target number is {target}")
+    attempts = 0
+    while True:
+        guess = random.randint(1, 100)
+        attempts += 1
+        if guess == target:
+            print(f"Guessed {target} correctly in {attempts} attempts!")
+            break
+        elif attempts > 1000:
+            print("Took too many attempts.")
+            break
 
 if __name__ == "__main__":
-    print("Fibonacci Sequence (first 10 numbers):")
-    print(fibonacci(10))
+    simulate_guessing_game()
